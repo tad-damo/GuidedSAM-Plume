@@ -1,0 +1,12 @@
+git+https://github.com/facebookresearch/sam2.git@2b90b9f5ceec907a1c18123530e92e794ad901a4
+
+Flask==3.1.1
+Flask-Cors==6.0.1
+av==13.1.0
+dataclasses-json==0.6.7
+eva-decord==0.6.1
+gunicorn==23.0.0
+imagesize==1.4.1
+pycocotools==2.0.10
+strawberry-graphql==0.275.5
+opencv-python==4.11.0.86 

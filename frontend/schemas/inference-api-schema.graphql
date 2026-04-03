@@ -1,0 +1,124 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# Modifications Copyright (c) 2025
+# Université Lumière Lyon 2, CNRS, Ecole Centrale de Lyon, INSA Lyon, Universite Claude Bernard Lyon 1, LIRIS, UMR5205, 69007 Lyon, France
+#
+# Authors
+# Contributors: Taddeo D'ADAMO (GitHub: @tad-damo)
+# Advisors: Laure TOUGNE RODET(GitHub: @lauretougne), Catherine POTHIER (GitHub: @CathImage27), Bertrand KERAUTRET (GitHub: @kerautret)
+#
+# Modifications:
+# - Replaced "points"-only inputs, types and mutations with "prompts" ones to support boxes.
+# - Created `MaskMetadata` type
+# - Added `MaskMetadata` to `RLEMaskForObject` for storing contours and morphing parameters.
+
+input AddPointsOrBoxInput {
+  sessionId: String!
+  frameIndex: Int!
+  clearOldPoints: Boolean!
+  objectId: Int!
+  labels: [Int!]!
+  points: [[Float!]!]!
+  box: [Float!]
+}
+
+type CancelPropagateInVideo {
+  success: Boolean!
+}
+
+input CancelPropagateInVideoInput {
+  sessionId: String!
+}
+
+input ClearPromptsInFrameInput {
+  sessionId: String!
+  frameIndex: Int!
+  objectId: Int!
+}
+
+type ClearPromptsInVideo {
+  success: Boolean!
+}
+
+input ClearPromptsInVideoInput {
+  sessionId: String!
+}
+
+type CloseSession {
+  success: Boolean!
+}
+
+input CloseSessionInput {
+  sessionId: String!
+}
+
+type Mutation {
+  startSession(input: StartSessionInput!): StartSession!
+  closeSession(input: CloseSessionInput!): CloseSession!
+  addPointsOrBox(input: AddPointsOrBoxInput!): RLEMaskListOnFrame!
+  clearPromptsInFrame(input: ClearPromptsInFrameInput!): RLEMaskListOnFrame!
+  clearPromptsInVideo(input: ClearPromptsInVideoInput!): ClearPromptsInVideo!
+  removeObject(input: RemoveObjectInput!): [RLEMaskListOnFrame!]!
+  cancelPropagateInVideo(
+    input: CancelPropagateInVideoInput!
+  ): CancelPropagateInVideo!
+}
+
+input PingInput {
+  sessionId: String!
+}
+
+type Pong {
+  success: Boolean!
+}
+
+type Query {
+  ping(input: PingInput!): Pong!
+}
+
+type MaskMetadata {
+  contoursCoords: [[[Int!]!]!]!
+  morphParams: String!
+}
+
+type RLEMask {
+  size: [Int!]!
+  counts: String!
+  order: String!
+}
+
+type RLEMaskForObject {
+  objectId: Int!
+  rleMask: RLEMask!
+  metadata: MaskMetadata!
+}
+
+type RLEMaskListOnFrame {
+  frameIndex: Int!
+  rleMaskList: [RLEMaskForObject!]!
+}
+
+input RemoveObjectInput {
+  sessionId: String!
+  objectId: Int!
+}
+
+type StartSession {
+  sessionId: String!
+}
+
+input StartSessionInput {
+  path: String!
+}

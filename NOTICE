@@ -1,0 +1,261 @@
+This product includes software developed at Meta Platforms, Inc. and affiliates,
+specifically portions of the SAM 2 (Segment Anything Model 2) repository, including
+code from the demo component.
+
+Original source:
+https://github.com/facebookresearch/segment-anything-2
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+---
+
+Modifications Copyright (c) 2025 Université Lumière Lyon 2, CNRS, Ecole Centrale de Lyon, INSA Lyon, Universite Claude
+Bernard Lyon 1, LIRIS, UMR5205, 69007 Lyon, France
+
+Authors
+Contributors: Taddeo D'ADAMO (GitHub: @tad-damo)
+Advisors: Laure TOUGNE RODET(GitHub: @lauretougne), Catherine POTHIER (GitHub: @CathImage27), Bertrand KERAUTRET (GitHub: @kerautret)
+
+This project includes modifications to the original SAM 2 demo code.
+Modifications are described below:
+
+### Edited Files
+
+See each file’s header for detailed modification notes.
+
+- `README.md`
+
+#### Backend
+
+- `backend/server/app_conf.py`
+- `backend/server/data/data_types.py`
+- `backend/server/data/loader.py`
+- `backend/server/data/schema.py`
+- `backend/server/data/transcoder.py`
+- `backend/server/inference/data_types.py`
+- `backend/server/inference/predictor.py`
+
+#### Frontend
+
+- `frontend/frontend.Dockerfile`
+- `frontend/package.json`
+- `frontend/yarn.lock`
+- `frontend/index.html`
+- `frontend/schemas/inference-api-schema.graphql`
+- `frontend/schemas/video-api-schema.graphql`
+- `frontend/src/App.tsx`
+- `frontend/src/common/codecs/VideoEncoder.ts`
+- `frontend/src/common/components/annotations/AddObjectButton.tsx`
+- `frontend/src/common/components/annotations/LimitNotice.tsx`
+- `frontend/src/common/components/annotations/MobileObjectsToolbarHeader.tsx`
+- `frontend/src/common/components/annotations/MobileObjectsToolbar.tsx`
+- `frontend/src/common/components/annotations/ObjectActions.tsx`
+- `frontend/src/common/components/annotations/ObjectsToolbarBottomActions.tsx`
+- `frontend/src/common/components/annotations/ObjectsToolbarHeader.tsx`
+- `frontend/src/common/components/annotations/ObjectsToolbar.tsx`
+- `frontend/src/common/components/annotations/PrimaryCTAButton.tsx`
+- `frontend/src/common/components/annotations/ToolbarObject.tsx`
+- `frontend/src/common/components/annotations/TrackletSwimlane.tsx`
+- `frontend/src/common/components/annotations/useTracklets.ts`
+- `frontend/src/common/components/button/PlaybackButton.tsx`
+- `frontend/src/common/components/button/PrimaryCTAButton.tsx`
+- `frontend/src/common/components/button/TrackAndPlayButton.tsx`
+- `frontend/src/common/components/gallery/ChangeVideoModal.tsx`
+- `frontend/src/common/components/gallery/DefaultVideoGalleryModalTrigger.tsx`
+- `frontend/src/common/components/gallery/useUploadVideo.ts`
+- `frontend/src/common/components/gallery/VideoGalleryUploadPhoto.tsx`
+- `frontend/src/common/components/options/DownloadOption.tsx`
+- `frontend/src/common/components/options/GalleryOption.tsx`
+- `frontend/src/common/components/options/ShareUtils.ts`
+- `frontend/src/common/components/options/TryAnotherVideoSection.tsx`
+- `frontend/src/common/components/options/UploadOption.tsx`
+- `frontend/src/common/components/options/useDownloadVideo.ts`
+- `frontend/src/common/components/session/useCloseSessionBeforeUnload.ts`
+- `frontend/src/common/components/toolbar/DesktopToolbar.tsx`
+- `frontend/src/common/components/toolbar/MobileToolbar.tsx`
+- `frontend/src/common/components/toolbar/ToolbarConfig.tsx`
+- `frontend/src/common/components/toolbar/ToolbarHeaderWrapper.tsx`
+- `frontend/src/common/components/toolbar/Toolbar.tsx`
+- `frontend/src/common/components/toolbar/useListenToStreamingState.ts`
+- `frontend/src/common/components/toolbar/useToolbarTabs.ts`
+- `frontend/src/common/components/video/ChangeVideoModal.tsx`
+- `frontend/src/common/components/video/editor/atoms.ts`
+- `frontend/src/common/components/video/editor/useResetEditor.ts`
+- `frontend/src/common/components/video/editor/useVideo.ts`
+- `frontend/src/common/components/video/editor/VideoEditor.tsx`
+- `frontend/src/common/components/video/editor/VideoEditorUtils.ts`
+- `frontend/src/common/components/video/effects/Effects.ts`
+- `frontend/src/common/components/video/effects/Effect.ts`
+- `frontend/src/common/components/video/effects/EffectUtils.ts`
+- `frontend/src/common/components/video/effects/EraseForegroundEffect.ts`
+- `frontend/src/common/components/video/effects/OverlayEffect.ts`
+- `frontend/src/common/components/video/filmstrip/FilmstripUtil.tsx`
+- `frontend/src/common/components/video/filmstrip/VideoFilmstrip.tsx`
+- `frontend/src/common/components/video/layers/InteractionLayer.tsx`
+- `frontend/src/common/components/video/useInputVideo.ts`
+- `frontend/src/common/components/video/useVideoWorker.ts`
+- `frontend/src/common/components/video/Video.tsx`
+- `frontend/src/common/components/video/VideoWorkerBridge.ts`
+- `frontend/src/common/components/video/VideoWorkerContext.ts`
+- `frontend/src/common/components/video/VideoWorker.ts`
+- `frontend/src/common/components/video/VideoWorkerTypes.ts`
+- `frontend/src/common/error/ErrorSerializationUtils.ts`
+- `frontend/src/common/error/ErrorUtils.ts`
+- `frontend/src/common/loading/UploadLoadingScreen.tsx`
+- `frontend/src/common/tracker/SAM2Model.ts`
+- `frontend/src/common/tracker/Tracker.ts`
+- `frontend/src/common/tracker/TrackerTypes.ts`
+- `frontend/src/layouts/RootLayout.tsx`
+- `frontend/src/routes/PageNotFoundPage.tsx`
+- `frontend/src/settings/SAM2Settings.tsx`
+- `frontend/src/settings/SettingsContextProvider.tsx`
+- `frontend/src/settings/SettingsModal.tsx`
+- `frontend/src/settings/SettingsReducer.ts`
+- `frontend/src/theme/colors.ts`
+
+#### Frontend - automtically generated
+
+- `frontend/schema.graphql`
+- `frontend/src/common/components/gallery/__generated__/useUploadVideoMutation.graphql.ts`
+- `frontend/src/common/tracker/__generated__/SAM2ModelRemoveObjectMutation.graphql.ts`
+
+### Renamed Files (might be edited too)
+
+#### Frontend
+
+- `frontend/src/demo/SAM2DemoApp.tsx` → `frontend/src/segmenter/VolCloudAISegmenterApp.tsx`
+- `frontend/src/layouts/DemoPageLayout.tsx` → `frontend/src/layouts/SegmenterPageLayout.tsx`
+- `frontend/src/routes/DemoPageWrapper.tsx` → `frontend/src/routes/SegmenterPageWrapper.tsx`
+- `frontend/src/common/components/annotations/PointsToggle.tsx` → `frontend/src/common/components/annotations/PromptsToggle.tsx`
+- `frontend/src/routes/DemoPage.tsx` → `frontend/src/routes/SegmenterPage.tsx`
+- `frontend/src/demo/atoms.ts` → `frontend/src/segmenter/atoms.ts`
+- `frontend/src/demo/DemoConfig.tsx` → `frontend/src/segmenter/SegmenterConfig.tsx`
+- `frontend/src/demo/DemoErrorFallback.tsx` → `frontend/src/segmenter/SegmenterErrorFallback.tsx`
+- `frontend/src/demo/DemoSuspenseFallback.tsx` → `frontend/src/segmenter/SegmenterSuspenseFallback.tsx`
+- `frontend/src/common/logger/DemoLogger.ts` → `frontend/src/common/logger/SegmenterLogger.ts`
+- `frontend/src/common/components/annotations/ClearAllPointsInVideoButton.tsx` → `frontend/src/common/components/annotations/ClearAllPromptsInVideoButton.tsx`
+- `frontend/src/common/components/gallery/DemoVideoGalleryModal.tsx` → `frontend/src/common/components/gallery/SegmenterVideoGalleryModal.tsx`
+- `frontend/src/common/components/gallery/DemoVideoGallery.tsx` → `frontend/src/common/components/gallery/SegmenterVideoGallery.tsx`
+- `frontend/src/common/components/options/MoreOptionsToolbarBottomActions.tsx` → `frontend/src/common/components/options/DownloadToolbarBottomActions.tsx`
+- `frontend/src/common/components/options/MoreOptionsToolbar.tsx` → `frontend/src/common/components/options/DownloadToolbar.tsx`
+- `frontend/src/common/components/session/RestartSessionButton.tsx` → `frontend/src/common/components/session/CloseSessionsButton.tsx`
+- `frontend/src/common/components/session/useRestartSession.ts` → `frontend/src/common/components/session/useCloseSessions.ts`
+- `frontend/src/common/components/video/editor/DemoVideoEditor.tsx` → `frontend/src/common/components/video/editor/SegmenterVideoEditor.tsx`
+- `frontend/src/common/components/video/editor/useVideoEffect.ts` → `frontend/src/common/components/video/editor/useVideosEffect.ts`
+- `frontend/src/common/components/video/layers/PointsLayer.tsx` → `frontend/src/common/components/video/layers/PromptsLayer.tsx`
+
+#### Frontend - automtically generated
+
+- `frontend/src/common/tracker/__generated__/SAM2ModelAddNewPointsMutation.graphql.ts` → `frontend/src/common/tracker/__generated__/SAM2ModelAddNewPointsOrBoxMutation.graphql.ts`
+- `frontend/src/common/tracker/__generated__/SAM2ModelClearPointsInFrameMutation.graphql.ts` → `frontend/src/common/tracker/__generated__/SAM2ModelClearPromptsInFrameMutation.graphql.ts`
+- `frontend/src/common/tracker/__generated__/SAM2ModelClearPointsInVideoMutation.graphql.ts` → `frontend/src/common/tracker/__generated__/SAM2ModelClearPromptsInVideoMutation.graphql.ts`
+- `frontend/src/common/components/gallery/__generated__/DemoVideoGalleryQuery.graphql.ts` `frontend/src/common/components/gallery/__generated__/SegmenterVideoGalleryQuery.graphql.ts`
+- `frontend/src/routes/__generated__/DemoPageQuery.graphql.ts` → `frontend/src/routes/__generated__/SegmenterPageQuery.graphql.ts`
+- `frontend/src/common/components/gallery/__generated__/DemoVideoGalleryModalQuery.graphql.ts` → `frontend/src/common/components/gallery/__generated__/SegmenterVideoGalleryModalQuery.graphql.ts`
+
+### New Files
+
+- `docker-compose.yaml`
+- `GUI_user_guide.pdf`
+
+- `backend/backend.Dockerfile`
+- `backend/.env_default`
+- `backend/.gitignore`
+- `backend/.gunicorn-env`
+- `backend/packages.txt`
+- `backend/requirements.txt`
+- `backend/run_server.sh`
+- `backend/server/helpers/shape_helpers.py`
+
+- `frontend/src/common/codecs/MasksMetricsEncoder.ts`
+- `frontend/src/common/components/annotations/UploadVideoView.tsx`
+- `frontend/src/common/components/annotations/MobileUploadVideoBanner.tsx`
+- `frontend/src/common/components/button/NextVideoButton.tsx`
+- `frontend/src/common/components/video/thumbnails/ThumbnailsPool.tsx`
+- `frontend/src/common/components/video/thumbnails/Thumbnail.tsx`
+- `frontend/src/common/components/video/editor/useVideos.ts`
+
+### Removed Files
+
+- `.gitignore`
+
+#### Backend
+
+- `data/gallery/01_dog.mp4`
+- `data/gallery/02_cups.mp4`
+- `data/gallery/03_blocks.mp4`
+- `data/gallery/04_coffee.mp4`
+- `data/gallery/05_default_juggle.mp4`
+
+#### Frontend
+
+- `frontend/src/common/components/annotations/CloseSessionButton.tsx`
+- `frontend/src/common/components/annotations/FirstClickView.tsx`
+- `frontend/src/common/components/annotations/MobileObjectsList.tsx`
+- `frontend/src/common/components/effects/BackgroundEffects.tsx`
+- `frontend/src/common/components/effects/EffectsCarouselShadow.tsx`
+- `frontend/src/common/components/effects/EffectsCarousel.tsx`
+- `frontend/src/common/components/effects/EffectsToolbarBottomActions.tsx`
+- `frontend/src/common/components/effects/EffectsToolbarHeader.tsx`
+- `frontend/src/common/components/effects/EffectsToolbar.tsx`
+- `frontend/src/common/components/effects/EffectsUtils.ts`
+- `frontend/src/common/components/effects/EffectVariantBadge.tsx`
+- `frontend/src/common/components/effects/HighlightEffects.tsx`
+- `frontend/src/common/components/effects/MobileEffectsToolbar.tsx`
+- `frontend/src/common/components/effects/MoreFunEffects.tsx`
+- `frontend/src/common/components/MobileFirstClickBanner.tsx`
+- `frontend/src/common/components/snackbar/DemoMessagesSnackbarUtils.ts`
+- `frontend/src/common/components/snackbar/MessagesSnackbar.tsx`
+- `frontend/src/common/components/snackbar/snackbarAtoms.ts`
+- `frontend/src/common/components/snackbar/useDemoMessagesSnackbar.ts`
+- `frontend/src/common/components/snackbar/useExpireMessage.ts`
+- `frontend/src/common/components/snackbar/useMessagesSnackbar.ts`
+- `frontend/src/common/components/toolbar/ToolbarProgressChip.tsx`
+- `frontend/src/common/components/video/effects/ArrowGLEffect.ts`
+- `frontend/src/common/components/video/effects/BackgroundBlurEffect.ts`
+- `frontend/src/common/components/video/effects/BackgroundTextEffect.ts`
+- `frontend/src/common/components/video/effects/BaseGLEffect.ts`
+- `frontend/src/common/components/video/effects/BurstGLEffect.ts`
+- `frontend/src/common/components/video/effects/CutoutGLEffect.ts`
+- `frontend/src/common/components/video/effects/DesaturateEffect.ts`
+- `frontend/src/common/components/video/effects/EraseForegroundGLEffect.ts`
+- `frontend/src/common/components/video/effects/GradientEffect.ts`
+- `frontend/src/common/components/video/effects/NoisyMaskEffect.ts`
+- `frontend/src/common/components/video/effects/PixelateEffect.ts`
+- `frontend/src/common/components/video/effects/PixelateMaskGLEffect.ts`
+- `frontend/src/common/components/video/effects/ReplaceGLEffect.ts`
+- `frontend/src/common/components/video/effects/ScopeGLEffect.ts`
+- `frontend/src/common/components/video/effects/shaders/Arrow.frag`
+- `frontend/src/common/components/video/effects/shaders/BackgroundBlur.frag`
+- `frontend/src/common/components/video/effects/shaders/Burst.frag`
+- `frontend/src/common/components/video/effects/shaders/Cutout.frag`
+- `frontend/src/common/components/video/effects/shaders/DefaultVert.vert`
+- `frontend/src/common/components/video/effects/shaders/EraseForeground.frag`
+- `frontend/src/common/components/video/effects/shaders/Gradient.frag`
+- `frontend/src/common/components/video/effects/shaders/NoisyMask.frag`
+- `frontend/src/common/components/video/effects/shaders/Overlay.frag`
+- `frontend/src/common/components/video/effects/shaders/Overlay.vert`
+- `frontend/src/common/components/video/effects/shaders/Pixelate.frag`
+- `frontend/src/common/components/video/effects/shaders/PixelateMask.frag`
+- `frontend/src/common/components/video/effects/shaders/Replace.frag`
+- `frontend/src/common/components/video/effects/shaders/Scope.frag`
+- `frontend/src/common/components/video/effects/shaders/Sobel.frag`
+- `frontend/src/common/components/video/effects/shaders/VibrantMask.frag`
+- `frontend/src/common/components/video/effects/SobelEffect.ts`
+- `frontend/src/common/components/video/effects/VibrantMaskEffect.ts`
+- `frontend/src/graphql/errors/WebGLContextError.ts`
+- `frontend/src/common/utils/ShaderUtils.ts`
+
+---
+
+Any modifications are licensed under the Apache License, Version 2.0, as stated above.
