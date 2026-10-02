@@ -11,6 +11,20 @@ Ecole Centrale de Lyon, LIRIS, UMR5205, 69029 Bron, France <br>
 <sup>2</sup> Department of Earth Sciences, University of Geneva, Geneva, Switzerland <br>
 <sup>3</sup> Department of Computer Sciences, University of Geneva, Carouge, Switzerland
 
+<p align="center">
+
+📄 <a href="http://dx.doi.org/10.1007/978-3-032-39385-2_26">Paper</a>
+&nbsp;&nbsp;&nbsp;
+▶️ <a href="GUI_user_guide.pdf">Tutorial</a>
+&nbsp;&nbsp;&nbsp;
+🛠️ <a href="INSTALL.md">Installation</a>
+&nbsp;&nbsp;&nbsp;
+🗂️ <a href="https://datasets.liris.cnrs.fr/guidedsam-plume-dataset-version1">Dataset</a>
+&nbsp;&nbsp;&nbsp;
+📚 <a href="#citation">BibTeX</a>
+
+</p>
+
 
 <img src="assets/interface.jpg" title="GuidedSAM-Plume Interface" alt="GuidedSAM-Plume Interface" style="width:1000px;"/>
 </div>
@@ -19,11 +33,13 @@ Ecole Centrale de Lyon, LIRIS, UMR5205, 69029 Bron, France <br>
 
 Welcome to the GuidedSAM-Plume repository!
 
+This repository contains the code and dataset associated with the paper: [GuidedSAM-Plume: An expert-guided segmentation framework for volcanic plumes](http://dx.doi.org/10.1007/978-3-032-39385-2_26).
+
 **GuidedSAM-Plume** is an open-source interactive segmentation framework for delineating volcanic plumes in both still images and video sequences. It leverages the zero-shot capabilities of SAM2 <a href="#fn1">[1]</a> to generate segmentation masks from minimal user inputs in the form of point prompts or bounding boxes. The semi-automatic workflow reduces manual annotation effort while preserving expert control and iterative refinement.
 
 On a workstation equipped with an NVIDIA GeForce RTX 4080 (16 GB VRAM), annotation time was reduced **from approximately 2 hours to 5–10 minutes** for 10-frame sequences compared with conventional manual annotation workflows.
 
-Segmentation performance was assessed using standard segmentation metrics, complemented by evaluation based on morphological descriptors commonly used in volcanological studies, including aspect ratio, convexity, and solidity. These additional measures provided a more comprehensive assessment of potential induced biases affecting downstream scientific analyses. The evaluation protocol is detailed in the paper
+Segmentation performance was assessed using standard segmentation metrics, complemented by evaluation based on morphological descriptors commonly used in volcanological studies, including aspect ratio, convexity, and solidity. These additional measures provided a more comprehensive assessment of potential induced biases affecting downstream scientific analyses. The evaluation protocol is detailed in the paper.
 
 Beyond efficiency gains, the use of a unified semi-automatic framework also contributes to reduced intra-annotator variability, improving consistency across generated annotations.
 
@@ -57,6 +73,24 @@ Two annotation sources are provided, both produced by expert volcanologists: man
 ## License
 
 See the [LICENSE](LICENSE) and [NOTICE](NOTICE) files for details.
+
+
+## Citation
+
+If you used this work in your research, please cite:
+
+```bibtex
+@InProceedings{dadamo:guidedsamplume,
+    title = {{GuidedSAM-Plume: An Expert-Guided Segmentation Framework for Volcanic Plumes}},
+    author = {D'adamo, Taddeo and Thivet, Simon and Pothier, Catherine and Simionato, Riccardo and Fries, Allan and Lemus, Jonathan and Bonadonna, Costanza and Rodet Tougne, Laure and Kerautret, Bertrand},
+    booktitle={Pattern Recognition. ICPR 2026 International Workshops},
+    year={2027},
+    publisher={Springer Nature Switzerland},
+    pages={364--379},
+    isbn={978-3-032-39385-2},
+    doi = {10.1007/978-3-032-39385-2\_26}
+}
+```
 
 ## References
 
