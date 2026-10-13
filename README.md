@@ -82,7 +82,7 @@ If you used this work in your research, please cite:
 ```bibtex
 @InProceedings{dadamo:guidedsamplume,
     title = {{GuidedSAM-Plume: An Expert-Guided Segmentation Framework for Volcanic Plumes}},
-    author = {D'adamo, Taddeo and Thivet, Simon and Pothier, Catherine and Simionato, Riccardo and Fries, Allan and Lemus, Jonathan and Bonadonna, Costanza and Rodet Tougne, Laure and Kerautret, Bertrand},
+    author = {D'Adamo, Taddeo and Thivet, Simon and Pothier, Catherine and Simionato, Riccardo and Fries, Allan and Lemus, Jonathan and Bonadonna, Costanza and Rodet Tougne, Laure and Kerautret, Bertrand},
     booktitle={Pattern Recognition. ICPR 2026 International Workshops},
     year={2027},
     publisher={Springer Nature Switzerland},
