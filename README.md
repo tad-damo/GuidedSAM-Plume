@@ -70,6 +70,10 @@ The dataset covers a broad range of acquisition and environmental conditions, in
 
 Two annotation sources are provided, both produced by expert volcanologists: manual segmentations and segmentation masks generated using the GuidedSAM-Plume interactive annotation framework.
 
+To convert the downloaded archive to a local Hugging Face ImageFolder dataset
+while preserving the original images and both annotation sources, see the
+[dataset conversion utility](tools/dataset/README.md).
+
 ## License
 
 See the [LICENSE](LICENSE) and [NOTICE](NOTICE) files for details.
